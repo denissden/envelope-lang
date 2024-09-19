@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Envelope!</title>
+    <style>
+        textarea,
+        #outputField {
+            font-size: 18px;
+            font-family: Consolas, Menlo, Monaco, Lucida Console,
+            Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
+            Courier New, monospace, serif;
+            width: 50%;
+        }
+
+        strong {
+            font-size: 22px;
+        }
+
+        #outputField {
+            height: 200px;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Envelope converter</h1>
+<hr />
+<strong>Envelope</strong>
+<br />
+<textarea name="envelope" id="envelope" cols="80" rows="9"></textarea>
+<br />
+<strong>JS</strong>
+<br />
+<textarea name="js" id="js" cols="80" rows="9"></textarea>
+<br />
+
+<script type="text/x-nvlp" src="converter.js"></script>
+<script src="../../dist/envelope.js"></script>
+</body>
+
+</html>

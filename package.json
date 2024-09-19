@@ -1,0 +1,40 @@
+{
+  "name": "envelope-lang",
+  "version": "1.0.0",
+  "description": "Envelope programming language",
+  "main": "dist/envelope.js",
+  "scripts": {
+    "build": "webpack",
+    "serve": "serve ./ -p 10010",
+    "dev": "npm run build && npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/denissden/envelope-lang"
+  },
+  "homepage": "https://nvlp.dev",
+  "keywords": [
+    "transpiler",
+    "envelope",
+    "go",
+    "language",
+    "js"
+  ],
+  "devDependencies": {
+    "@types/globalthis": "^1.0.4",
+    "serve": "^14.2.3",
+    "terser-webpack-plugin": "^5.3.10",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "author": "denissden",
+  "license": "MIT",
+  "dependencies": {
+    "globalthis": "^1.0.4"
+  }
+}
