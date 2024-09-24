@@ -1,24 +1,42 @@
 import polyfill from 'globalthis';
 // import {parser} from "./language";
 
-export function compile(text: string) {
+export function compile(text: string, softDisableDebug: boolean = false) {
   let result = text
-  if (!text.match(/\/\/\s*debug[\s_]*disable/)) {
-    result = addEmojiDebug(result)
-  }
+  result = addEmojiDebug(result, softDisableDebug)
   result = addErrVariable(result)
   return result
 }
 
-export function addEmojiDebug(text: string) {
+export function addEmojiDebug(text: string, softDisableDebug: boolean) {
   const emojis = ["💌", "👉", "🌭", "😂", "🥵"]
   const lines: string[] = []
-  let ix = 1;
-  text.split("\n").forEach(line => {
+  let ix = 0;
+  let isDebug = !softDisableDebug
+  for (const line of text.split("\n")) {
+    ix++
+    if (line.match(/\/\/\s*debug[\s_]*disable/)) {
+      isDebug = false
+      continue;
+    }
+    else if (line.match(/\/\/\s*debug[\s_]*enable/)) {
+      isDebug = true
+      continue;
+    }
+    else if (line.match(/\/\/\s*debug/)) {
+      isDebug = !isDebug
+      continue;
+    }
+
+    if (!isDebug) {
+      continue;
+    }
+    if (line.trim().length == 0) {
+      continue;
+    }
     lines.push(`console.log("${ix} ${emojis[ix % emojis.length]}" + ${JSON.stringify(line)});`)
     lines.push(line)
-    ix++
-  })
+  }
   return lines.join("\n")
 }
 
