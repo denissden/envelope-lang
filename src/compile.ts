@@ -50,9 +50,6 @@ export function addErrVariable(text: string) {
     const M_singleLineExpr = Array.from(line.matchAll(singleLineExpr))
     const M_multilineExprStart = Array.from(line.matchAll(multilineExprStart))
     const M_multilineExprEnd = Array.from(line.matchAll(multilineExprEnd))
-    console.log(M_singleLineExpr)
-    console.log(M_multilineExprStart)
-    console.log(M_multilineExprEnd)
     let errorNames: string[] = []
     if (M_multilineExprStart.length > 0) {
       const variableName = M_multilineExprStart[0][1]
