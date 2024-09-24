@@ -28,13 +28,9 @@ export function addEmojiDebug(text: string, softDisableDebug: boolean) {
       continue;
     }
 
-    if (!isDebug) {
-      continue;
+    if (isDebug && line.trim().length != 0) {
+      lines.push(`console.log("${ix} ${emojis[ix % emojis.length]}" + ${JSON.stringify(line)});`)
     }
-    if (line.trim().length == 0) {
-      continue;
-    }
-    lines.push(`console.log("${ix} ${emojis[ix % emojis.length]}" + ${JSON.stringify(line)});`)
     lines.push(line)
   }
   return lines.join("\n")
