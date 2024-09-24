@@ -23,6 +23,7 @@
   ],
   "devDependencies": {
     "@types/globalthis": "^1.0.4",
+    "@types/parsimmon": "^1.10.9",
     "serve": "^14.2.3",
     "terser-webpack-plugin": "^5.3.10",
     "ts-loader": "^9.5.1",
@@ -35,6 +36,7 @@
   "author": "denissden",
   "license": "MIT",
   "dependencies": {
-    "globalthis": "^1.0.4"
+    "globalthis": "^1.0.4",
+    "parsimmon": "^1.18.1"
   }
 }

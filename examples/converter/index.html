@@ -23,6 +23,8 @@
             background: #f9f9f9;
         }
     </style>
+    <script type="text/x-nvlp" src="converter.nvl"></script>
+    <script src="../../dist/envelope.js"></script>
 </head>
 
 <body>
@@ -37,8 +39,28 @@
 <textarea name="js" id="js" cols="80" rows="9"></textarea>
 <br />
 
-<script type="text/x-nvlp" src="converter.js"></script>
-<script src="../../dist/envelope.js"></script>
+<h3>Examples</h3>
+
+<p>Disable debug mode (any of)</p>
+<pre>
+//debugdisable
+// debug disable
+//debug_disable
+</pre>
+
+<p>GO style errors</p>
+<pre>
+result, err = task()
+</pre>
+
+<p>Multiline GO style errors</p>
+<pre>
+result, err = # await a.a(() => {
+ b, err = await task()
+})
+#
+</pre>
+
 </body>
 
 </html>

@@ -2,6 +2,9 @@ document.getElementById('envelope').addEventListener('keyup', convert, false)
 
 
 function convert() {
-    const text = document.getElementById('envelope').value;
+    text, err = document.getElementById('envelope').value;
+    if (err != null) {
+        console.log(`Error! ${err}`)
+    }
     document.getElementById('js').value = envelope(text);
 }
