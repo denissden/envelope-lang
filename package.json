@@ -1,6 +1,6 @@
 {
   "name": "envelope-lang",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Envelope programming language",
   "main": "dist/envelope.js",
   "scripts": {
